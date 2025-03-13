@@ -18,7 +18,7 @@ const validateCoupon = (req, res, next) => {
     }
   
     if (!validUntil || new Date(validUntil) <= new Date()) {
-      errors.push('Valid until date must be in the future');
+      errors.push('Cannot Use Past Dates for Validity');
     }
   
     if (minimumPurchase && minimumPurchase < 0) {
