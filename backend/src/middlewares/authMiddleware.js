@@ -9,7 +9,7 @@ export const isAuthenticated = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("Decoded token:", decoded); // See what's in your token
+    console.log("Decoded token is:", decoded); // See what's in your token
     req.user = decoded;
     next();
   } catch (error) {
